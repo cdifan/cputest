@@ -1,0 +1,7 @@
+# Ignore editor temporaries
+*.swp
+
+# Ignore build outputs
+*.lst
+*.r
+
