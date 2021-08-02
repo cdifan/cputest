@@ -4,4 +4,7 @@
 # Ignore build outputs
 *.lst
 *.r
+*.map
+*.mod
+*.rom
 
