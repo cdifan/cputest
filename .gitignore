@@ -8,3 +8,6 @@
 *.mod
 *.rom
 
+# Ignore distribution files
+*.zip
+
