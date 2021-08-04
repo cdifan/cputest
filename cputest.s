@@ -2891,14 +2891,14 @@ MOVE4:      move.w #$2000,$00010100
 *     Dn
             move #$275A,SR          * Initial value
             move SR,d0
-            cmpi.w #$275A,d0
+            cmpi.w #$271A,d0
             bne.s *                   * branch if Z set
 
 *     (An)
             move.l #$00000100,a0
             move #$275A,SR          * Initial value
             move SR,(a0)
-            cmpi.w #$275A,(a0)
+            cmpi.w #$271A,(a0)
             bne.s *                   * branch if Z set
 
 *     (An)+
@@ -2906,7 +2906,7 @@ MOVE4:      move.w #$2000,$00010100
             move #$257A,SR          * Initial value
             move SR,(a0)+
             move.l #$00000100,a0
-            cmpi.w #$257A,(a0)+
+            cmpi.w #$251A,(a0)+
             bne.s *                   * branch if Z set
 
 *     -(An)
@@ -2914,14 +2914,14 @@ MOVE4:      move.w #$2000,$00010100
             move #$2766,SR          * Initial value
             move SR,-(a0)
             move.l #$00000100,a0
-            cmpi.w #$2766,(a0)
+            cmpi.w #$2726,(a0)
             bne.s *                   * branch if Z set
 
 *     x(An)
             move.l #$00000102,a0
             move #$2733,SR          * Initial value
             move SR,4(a0)
-            cmpi.w #$2733,4(a0)
+            cmpi.w #$2713,4(a0)
             bne.s *                   * branch if Z set
 
 *     x(An,rn)
@@ -2929,19 +2929,19 @@ MOVE4:      move.w #$2000,$00010100
             moveq  #$00000004,d0
             move #$275a,SR          * Initial value
             move SR,4(a0,d0.l)
-            cmpi.w #$275a,4(a0,d0.l)
+            cmpi.w #$271a,4(a0,d0.l)
             bne.s *                   * branch if Z set
 
 *     x.W
             move #$2777,SR          * Initial value
             move SR,$0102
-            cmpi.w #$2777,$0102
+            cmpi.w #$2717,$0102
             bne.s *                   * branch if Z set
 
 *     x.L
             move #$2777,SR          * Initial value
             move SR,$10102
-            cmpi.w #$2777,$10102
+            cmpi.w #$2717,$10102
             bne.s *                   * branch if Z set
 
 
