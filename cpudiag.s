@@ -595,15 +595,15 @@ op_BTST:
 
 
 *             EA = x.L  - BYTE only
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             move.b #$01,(a0)+         * populate test data
             move.b #$FC,(a0)+         * populate test data
             move.b #$80,(a0)+         * populate test data
-            btst.b #0,$000F0100
+            btst.b #0,$F100
             beq BTST_FAIL               * branch if Z set
-            btst.b #1,$000F0101       *
+            btst.b #1,$F101       *
             bne BTST_FAIL               * branch if Z clear
-            btst.b #7,$000F0102       *
+            btst.b #7,$F102       *
             beq BTST_FAIL               * branch if Z set
 
 
@@ -776,15 +776,15 @@ op_BTST12:  bne.s *               * branch if Z clear
 
 
 *             EA = x.L  - BYTE only
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             move.b #$01,(a0)+         * populate test data
             move.b #$FC,(a0)+         * populate test data
             move.b #$80,(a0)+         * populate test data
-            btst.b d5,$000F0100
+            btst.b d5,$F100
             beq BTST_FAIL               * branch if Z set
-            btst.b d6,$000F0101       *
+            btst.b d6,$F101       *
             bne BTST_FAIL               * branch if Z clear
-            btst.b d7,$000F0102       *
+            btst.b d7,$F102       *
             beq BTST_FAIL               * branch if Z set
 
 
@@ -1018,15 +1018,15 @@ op_BCHG:
             bne BCHG_FAIL               * branch if Z clear
 
 *             EA = x.L  - BYTE only
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             move.b #$01,(a0)+         * populate test data
             move.b #$FC,(a0)+         * populate test data
             move.b #$80,(a0)+         * populate test data
-            bchg.b #0,$000F0100
+            bchg.b #0,$F100
             beq BCHG_FAIL               * branch if Z set
-            bchg.b #1,$000F0101       *
+            bchg.b #1,$F101       *
             bne BCHG_FAIL               * branch if Z clear
-            bchg.b #7,$000F0102       *
+            bchg.b #7,$F102       *
             beq BCHG_FAIL               * branch if Z set
             move.l #$00000100,a0      * point to memory to address 0x100
             cmpi.b #$01,(a0)+
@@ -1179,17 +1179,17 @@ op_BCHG:
             bne BCHG_FAIL               * branch if Z clear
 
 *             EA = x.L  - BYTE only
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             move.b #$01,(a0)+         * populate test data
             move.b #$FC,(a0)+         * populate test data
             move.b #$80,(a0)+         * populate test data
-            bchg.b d5,$000F0100
+            bchg.b d5,$F100
             beq BCHG_FAIL               * branch if Z set
-            bchg.b d6,$000F0101       *
+            bchg.b d6,$F101       *
             bne BCHG_FAIL               * branch if Z clear
-            bchg.b d7,$000F0102       *
+            bchg.b d7,$F102       *
             beq BCHG_FAIL               * branch if Z set
-            move.l #$000F0101,a0      * point to memory to address 0x100
+            move.l #$F101,a0      * point to memory to address 0x100
             cmpi.b #$FE,(a0)
             bne BCHG_FAIL               * branch if Z clear
 
@@ -1344,15 +1344,15 @@ op_BCLR:
 
 
 *             EA = x.L  - BYTE only
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             move.b #$FF,(a0)          * populate test data
-            bclr.b #0,$000F0100
+            bclr.b #0,$F100
             beq BCLR_FAIL               * branch if Z set
-            bclr.b #1,$000F0100       *
+            bclr.b #1,$F100       *
             beq BCLR_FAIL               * branch if Z set
-            bclr.b #2,$000F0100       *
+            bclr.b #2,$F100       *
             beq BCLR_FAIL               * branch if Z set
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             cmpi.b #$F8,(a0)+
             bne BCLR_FAIL               * branch if Z clear
 
@@ -1509,17 +1509,17 @@ op_BCLR:
             bne BCLR_FAIL               * branch if Z clear
 
 *             EA = x.L  - BYTE only
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             move.b #$01,(a0)+         * populate test data
             move.b #$FC,(a0)+         * populate test data
             move.b #$80,(a0)+         * populate test data
-            bclr.b d5,$000F0100
+            bclr.b d5,$F100
             beq BCLR_FAIL               * branch if Z set
-            bclr.b d6,$000F0101       *
+            bclr.b d6,$F101       *
             bne BCLR_FAIL               * branch if Z clear
-            bclr.b d7,$000F0102       *
+            bclr.b d7,$F102       *
             beq BCLR_FAIL               * branch if Z set
-            move.l #$000F0101,a0      * point to memory to address 0x100
+            move.l #$F101,a0      * point to memory to address 0x100
             cmpi.b #$FC,(a0)
             bne BCLR_FAIL               * branch if Z clear
 
@@ -1685,15 +1685,15 @@ op_BSET:
 
 
 *             EA = x.L  - BYTE only
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             move.b #$00,(a0)          * populate test data
-            bset.b #0,$000F0100
+            bset.b #0,$F100
             bne BSET_FAIL               * branch if Z clear
-            bset.b #1,$000F0100       *
+            bset.b #1,$F100       *
             bne BSET_FAIL               * branch if Z clear
-            bset.b #2,$000F0100       *
+            bset.b #2,$F100       *
             bne BSET_FAIL               * branch if Z clear
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             cmpi.b #$07,(a0)+
             bne BSET_FAIL
 
@@ -1861,17 +1861,17 @@ op_BSET:
             bne BSET_FAIL               * branch if Z clear
 
 *             EA = x.L  - BYTE only
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             move.b #$00,(a0)+         * populate test data
             move.b #$00,(a0)+         * populate test data
             move.b #$00,(a0)+         * populate test data
-            bset.b d5,$000F0100
+            bset.b d5,$F100
             bne BSET_FAIL               * branch if Z clear
-            bset.b d6,$000F0100       *
+            bset.b d6,$F100       *
             bne BSET_FAIL               * branch if Z clear
-            bset.b d7,$000F0100       *
+            bset.b d7,$F100       *
             bne BSET_FAIL               * branch if Z clear
-            move.l #$000F0100,a0      * point to memory to address 0x100
+            move.l #$F100,a0      * point to memory to address 0x100
             cmpi.b #$83,(a0)
             bne BSET_FAIL               * branch if Z clear
 
@@ -2443,67 +2443,67 @@ op_ADD_I:
 
 
 *     EA = x.L  - Byte
-            move.l #$000F0100,a0      * populate test data
+            move.l #$F100,a0      * populate test data
             move.l #$12345678,(a0)     * populate test data
-            addi.b #0,$000F0103
+            addi.b #0,$F103
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bmi ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcs ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvs ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            addi.b #$10,$000F0103
+            addi.b #$10,$F103
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bpl ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcs ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvc ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            addi.b #$A5,$000F0103
+            addi.b #$A5,$F103
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bmi ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcc ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvc ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            cmpi.b #$2D,$000F0103
+            cmpi.b #$2D,$F103
             bne ADD_I_FAIL                       * Check Z Flag  beq/bne
 
 *     EA = x.L- WORD
-            move.l #$000F0100,a0      * populate test data
+            move.l #$F100,a0      * populate test data
             move.l #$12345678,(a0)     * populate test data
-            addi.w #0,$000F0100
+            addi.w #0,$F100
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bmi ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcs ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvs ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            addi.w #$7000,$000F0100
+            addi.w #$7000,$F100
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bpl ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcs ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvc ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            addi.w #$A55A,$000F0100
+            addi.w #$A55A,$F100
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bmi ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcc ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvc ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            cmpi.w #$278E,$000F0100
+            cmpi.w #$278E,$F100
             bne ADD_I_FAIL                       * Check Z Flag  beq/bne
 
 *     EA = x.L- LONG
-            move.l #$12345678,$000F0100  * populate test data
-            addi.l #0,$000F0100
+            move.l #$12345678,$F100  * populate test data
+            addi.l #0,$F100
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bmi ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcs ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvs ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            addi.l #$F0000000,$000F0100
+            addi.l #$F0000000,$F100
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bmi ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcc ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvs ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            addi.l #$855AA55A,$000F0100
+            addi.l #$855AA55A,$F100
             beq ADD_I_FAIL                       * Check Z Flag  beq/bne
             bpl ADD_I_FAIL                       * Check N Flag  bmi/bpl
             bcs ADD_I_FAIL                       * Check C Flag  bcc/bcs
             bvs ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            addi.l #$A0000000,$000F0100
+            addi.l #$A0000000,$F100
             bvc ADD_I_FAIL                       * Check V Flag  bvc/bvs
-            cmpi.l #$278EFBD2,$000F0100
+            cmpi.l #$278EFBD2,$F100
             bne ADD_I_FAIL                       * Check Z Flag  beq/bne
 
             rts
@@ -2588,67 +2588,67 @@ op_SUB_I:
 
 
 *     EA = x.L  - Byte
-            move.l #$000F0100,a0      * populate test data
+            move.l #$F100,a0      * populate test data
             move.l #$12345678,(a0)     * populate test data
-            subi.b #0,$000F0103
+            subi.b #0,$F103
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bmi SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcs SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvs SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            subi.b #$10,$000F0103
+            subi.b #$10,$F103
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bmi SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcs SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvs SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            subi.b #$A5,$000F0103
+            subi.b #$A5,$F103
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bpl SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcc SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvc SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            cmpi.b #$C3,$000F0103
+            cmpi.b #$C3,$F103
             bne SUB_I_FAIL                       * Check Z Flag  beq/bne
 
 *     EA = x.L- WORD
-            move.l #$000F0100,a0      * populate test data
+            move.l #$F100,a0      * populate test data
             move.l #$12345678,(a0)     * populate test data
-            subi.w #0,$000F0100
+            subi.w #0,$F100
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bmi SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcs SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvs SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            subi.w #$7000,$000F0100
+            subi.w #$7000,$F100
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bpl SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcc SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvs SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            subi.w #$A55A,$000F0100
+            subi.w #$A55A,$F100
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bpl SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcc SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvs SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            cmpi.w #$FCDA,$000F0100
+            cmpi.w #$FCDA,$F100
             bne SUB_I_FAIL                       * Check Z Flag  beq/bne
 
 *     EA = x.L- LONG
-            move.l #$12345678,$000F0100  * populate test data
-            subi.l #0,$000F0100
+            move.l #$12345678,$F100  * populate test data
+            subi.l #0,$F100
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bmi SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcs SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvs SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            subi.l #$F0000000,$000F0100
+            subi.l #$F0000000,$F100
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bmi SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcc SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvs SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            subi.l #$855AA55A,$000F0100
+            subi.l #$855AA55A,$F100
             beq SUB_I_FAIL                       * Check Z Flag  beq/bne
             bpl SUB_I_FAIL                       * Check N Flag  bmi/bpl
             bcc SUB_I_FAIL                       * Check C Flag  bcc/bcs
             bvc SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            subi.l #$A0000000,$000F0100
+            subi.l #$A0000000,$F100
             bvs SUB_I_FAIL                       * Check V Flag  bvc/bvs
-            cmpi.l #$FCD9B11E,$000F0100
+            cmpi.l #$FCD9B11E,$F100
             bne SUB_I_FAIL                       * Check Z Flag  beq/bne
 
             rts
